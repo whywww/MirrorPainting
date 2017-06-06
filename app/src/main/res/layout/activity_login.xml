@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
 
     <TextView
         android:id="@+id/usr_label"
@@ -10,16 +11,19 @@
         android:layout_width="200px"
         android:layout_height="wrap_content"
         android:ems="17"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="165dp" />
 
     <EditText
-        android:id="@+id/usrName"
+        android:id="@+id/usrname_edit"
         android:layout_width="400px"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="16"
         android:hint="please input usrname"
+        android:maxLength="10"
+        android:minLines="5"
         android:layout_alignBaseline="@+id/usr_label"
         android:layout_alignBottom="@+id/usr_label"
         android:layout_alignParentRight="true"
@@ -32,36 +36,26 @@
         android:layout_width="200px"
         android:layout_height="wrap_content"
         android:ems="17"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
         android:layout_below="@+id/usr_label"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"/>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="400px"
-        android:layout_height="wrap_content"
-        android:password="true"
-        android:ems="16"
-        android:hint="please input password"
-        android:layout_alignBaseline="@+id/pswd_label"
-        android:layout_alignBottom="@+id/pswd_label"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp" />
-
     <Button
         android:id="@+id/login"
         android:text="Login"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:background="@drawable/button_bg"
+        android:layout_below="@+id/usr_label"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="#CAE1FF" />
+        android:layout_marginTop="93dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse" />
 
     <TextView
         android:id="@+id/forget"
         android:text="Forget password?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login"
@@ -76,7 +70,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead.Inverse" />
 
     <TextView
         android:layout_width="match_parent"
@@ -86,6 +81,27 @@
         android:layout_alignParentStart="true"
         android:id="@+id/response_text" />
 
+    <EditText
+        android:id="@+id/password_edit"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="Please input password"
+        android:layout_below="@+id/usrname_edit"
+        android:layout_alignLeft="@+id/usrname_edit"
+        android:layout_alignStart="@+id/usrname_edit" />
+
+    <TextView
+        android:id="@+id/loginTitle"
+        android:text="Login To Your Account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/usrname_edit"
+        android:layout_marginBottom="25dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:layout_alignRight="@+id/login"
+        android:layout_alignEnd="@+id/login" />
 
 </RelativeLayout>
 

@@ -1,13 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_sign_up"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg"
     tools:context="activitytest.example.com.test01.SignUpActivity">
+
+    <TextView
+        android:id="@+id/username"
+        android:text="username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="150dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+    <EditText
+        android:id="@+id/username_edit"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Please input usrname"
+        android:ems="10"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        android:layout_above="@+id/signup"
+        android:layout_toRightOf="@+id/username"
+        android:layout_toEndOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/password"
+        android:text="password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/password_edit"
+        android:layout_alignLeft="@+id/username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+    <EditText
+        android:id="@+id/password_edit"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="Please input password"
+        android:layout_below="@+id/username_edit"
+        android:layout_toRightOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/password2"
+        android:text="password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/password2_edit"
+        android:layout_alignLeft="@+id/username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
+    <EditText
+        android:id="@+id/password2_edit"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="Please input password again"
+        android:layout_below="@+id/password_edit"
+        android:layout_toRightOf="@+id/password2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/response_text" />
+
+    <Button
+        android:id="@+id/signup"
+        android:text="Sign Up"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:background="@drawable/button_bg"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="93dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
+        android:elevation="0dp" />
+
+    <ImageButton
+        android:id="@+id/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_user"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/ic_user"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
