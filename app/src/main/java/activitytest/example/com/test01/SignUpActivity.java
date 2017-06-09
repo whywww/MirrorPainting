@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,15 +31,16 @@ import java.net.SocketException;
 import java.net.URL;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText username;
-    private EditText password;
-    private EditText password2;
+    private EditText username, password, password2, email, region;
     private Button signup;
-    TextView responseText;
+    //TextView responseText;
     private InputMethodManager in;
     String PassWord = "";
     String PassWord2 = "";
     String UserName = "";
+    String Gender = "";
+    String Email = "";
+    String Region = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +50,34 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         username = (EditText) findViewById(R.id.username_edit);
         password = (EditText) findViewById(R.id.password_edit);
         password2 = (EditText) findViewById(R.id.password2_edit);
+        email = (EditText) findViewById(R.id.email_edit);
+        region = (EditText) findViewById(R.id.region_edit);
         signup = (Button) findViewById(R.id.signup);
-        responseText=(TextView)findViewById(R.id.response_text);
+        //responseText=(TextView)findViewById(R.id.response_text);
+        RadioGroup group = (RadioGroup)this.findViewById(R.id.radioGroup);
+
         in = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
 
         signup.setOnClickListener(this);
+        group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(R.id.girl == checkedId){
+                    Gender = "girl";
+                }
+                else if(R.id.boy == checkedId){
+                    Gender = "boy";
+                }
+            }
+        });
     }
 
     public void onClick(View v) {
         if (v.getId() == R.id.signup) {
+            UserName = username.getText().toString();
+            PassWord = password.getText().toString();
+            PassWord2 = password2.getText().toString();
+            Email = email.getText().toString();
+            Region = region.getText().toString();
                 //设置sign up点击事件
             if(checkRegisterInfoLegal()){ // 注册符合要求
                 // 传递信息给服务器
@@ -75,20 +96,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     // 判断用户注册信息是否合法
     public boolean checkRegisterInfoLegal(){
-
-        UserName = username.getText().toString();
         if(TextUtils.isEmpty(UserName)){
             Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        PassWord = password.getText().toString();
         if(TextUtils.isEmpty(PassWord)){
             password.setError("密码不能为空");
             return false;
         }
 
-        PassWord2 = password2.getText().toString();
         if(TextUtils.isEmpty(PassWord2)){
             password2.setError("确认密码不能为空");
             return false;
@@ -133,7 +150,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     while ((line=reader.readLine())!=null) {
                         response.append(line);
                     }
-                    showResponse(response.toString());
+                    //showResponse(response.toString());
 
                 }catch (Exception e){
                     e.printStackTrace();
@@ -156,7 +173,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                responseText.setText(response);
+                //responseText.setText(response);
                 //System.out.println(response);
             }
         });
@@ -164,9 +181,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     //使用socket连接
     private void socketConnection(){
-
                 try {
-
                         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().
                                 detectDiskWrites().detectNetwork().penaltyLog().build());
 
@@ -179,6 +194,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         JSONObject obj = new JSONObject();
                         obj.put("username", UserName);
                         obj.put("password", PassWord);
+                        obj.put("gender", Gender);
+                        obj.put("email", Email);
+                        obj.put("region", Region);
                         obj.put("request", "register");
 
                         os.println(obj.toString());

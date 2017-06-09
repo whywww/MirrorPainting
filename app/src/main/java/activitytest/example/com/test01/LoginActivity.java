@@ -169,16 +169,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //is用来收信息  存在问题，如果服务器不发信息怎么办！！！！！！！！！！！！！！！！！！！！
                     JSONTokener jsonParser = new JSONTokener(state);
                     JSONObject person = (JSONObject)jsonParser.nextValue();
-                    String token = person.getString("result");
+                    String result = person.getString("result");
+                    System.out.println(result);
 
-
-                    if( token.equals("true")){
+                    if( result.equals("true")){
+                        System.out.println("1111111111111111");
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        //intent.putExtra("mainid",tokenizer.nextToken());
+                        intent.putExtra("username",UserName);
                         startActivity(intent);
-                    }else if(token.equals("false")) {
+                    }else if(result.equals("false")) {
                         Toast.makeText(LoginActivity.this, "密码错误", Toast.LENGTH_SHORT).show();
-                    }else if(token.equals("notexist")) {
+                    }else if(result.equals("notexist")) {
                         Toast.makeText(LoginActivity.this, "用户名不存在", Toast.LENGTH_SHORT).show();
                     }
                 }catch (IOException e) {

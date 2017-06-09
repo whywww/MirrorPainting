@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/newPic"
+        android:icon="@drawable/ic_new"
+        android:title="New"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/open"
+        android:icon="@drawable/ic_open"
+        android:title="Open..."
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/info"
+        android:icon="@drawable/ic_info"
+        android:title="My Info"
+        app:showAsAction="always"/>
+
+</menu>
