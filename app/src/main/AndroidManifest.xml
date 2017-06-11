@@ -3,7 +3,8 @@
     package="activitytest.example.com.test01">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
 
     <application
         android:allowBackup="true"
@@ -11,35 +12,33 @@
         android:label="test01"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <uses-permission android:name="android.permission.INTERNET" />
-
         <provider
-            android:authorities="activitytest.example.com.test01.fileprovider"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="activitytest.example.com.test01.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <activity
             android:name=".MainActivity"
-            android:label="MirrorPainting">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="MirrorPainting"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".LoginActivity" >
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter> </activity>
+        <activity android:name=".LoginActivity">
 
         </activity>
         <activity android:name=".ResetPswdActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".EditActivity" />
         <activity android:name=".InfoActivity" />
-        <activity android:name=".EditInfoActivity"></activity>
+        <activity android:name=".EditInfoActivity" />
+        <activity android:name=".PictureSelectActivity" />
+        <activity android:name=".DisplayActivity"></activity>
     </application>
 
 </manifest>

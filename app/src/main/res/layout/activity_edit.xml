@@ -1,33 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_edit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="activitytest.example.com.test01.EditActivity">
+    android:background="@android:color/holo_orange_light" >
+
+    <view.ColorSelector
+        android:id="@+id/pencolorselector"
+        android:layout_width="fill_parent"
+        android:layout_height="60px"
+        android:layout_marginTop="315px"
+        android:visibility="gone"
+        />
+
+    <view.SketchPadView
+        android:id="@+id/sketchpad"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/pencolorselector"
+        android:layout_toEndOf="@+id/pencolorselector" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/sketchpad" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5px"
+            android:layout_marginTop="3px"
+            android:id="@+id/pen"
+            android:text="@string/sketchpadtool_pen"
+            android:layout_weight="1"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/eraser"
+            android:text="@string/sketchpadtool_eraser"
+            android:layout_weight="1"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/clear"
+            android:text="@string/sketchpadtool_clear"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/undo"
+            android:text="@string/sketchpadtool_undo"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/redo"
+            android:text="@string/sketchpadtool_redo"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/penColor"
+            android:text="@string/sketchpadtool_pencolor"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/bkColor"
+            android:text="@string/sketchpadtool_bkcolor"
+            android:layout_weight="1"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/penUpSize"
+            android:text="@string/sketchpadtool_strokesizeUp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/penDownSize"
+            android:text="@string/sketchpadtool_strokesizeDown"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/choose"
+            android:text="@string/sketchpadtool_choose"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3px"
+            android:id="@+id/save"
+            android:text="@string/sketchpadtool_save"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
 
-    <Button
-        android:text="Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:id="@+id/save" />
-
-    <ImageView
-        android:id="@+id/pic1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/pic1"
-        android:layout_below="@+id/save"
-        android:layout_alignLeft="@+id/save"
-        android:layout_alignStart="@+id/save"
-        android:layout_marginTop="121dp" />
 </RelativeLayout>

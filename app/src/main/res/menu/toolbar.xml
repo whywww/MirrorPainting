@@ -9,12 +9,6 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/open"
-        android:icon="@drawable/ic_open"
-        android:title="Open..."
-        app:showAsAction="ifRoom" />
-
-    <item
         android:id="@+id/info"
         android:icon="@drawable/ic_info"
         android:title="My Info"

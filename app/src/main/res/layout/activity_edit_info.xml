@@ -31,19 +31,6 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/username"
-        android:text="admin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_alignBaseline="@+id/Name"
-        android:layout_alignBottom="@+id/Name"
-        android:layout_toRightOf="@+id/Name"
-        android:layout_toEndOf="@+id/Name" />
-
-    <TextView
         android:id="@+id/Gender"
         android:text="GENDER"
         android:layout_width="wrap_content"
@@ -53,16 +40,6 @@
         android:layout_alignStart="@+id/Name"
         android:layout_marginTop="23dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"/>
-
-    <EditText
-        android:id="@+id/region"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:layout_alignBottom="@+id/Region"
-        android:layout_alignLeft="@+id/username"
-        android:layout_alignStart="@+id/username" />
 
     <TextView
         android:id="@+id/Email"
@@ -77,13 +54,16 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Please input your email"
         android:layout_alignBottom="@+id/Email"
         android:layout_alignLeft="@+id/region"
         android:layout_alignStart="@+id/region"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"/>
 
     <TextView
         android:id="@+id/Info"
@@ -98,13 +78,16 @@
 
     <EditText
         android:id="@+id/info"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Tell me more about you"
         android:layout_alignBottom="@+id/Info"
         android:layout_alignLeft="@+id/email"
         android:layout_alignStart="@+id/email"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"/>
 
     <Button
         android:id="@+id/save"
@@ -117,14 +100,49 @@
         android:layout_centerHorizontal="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
 
+    <TextView
+        android:id="@+id/Region"
+        android:text="REGION"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignLeft="@+id/Gender"
+        android:layout_alignStart="@+id/Gender" />
+
+    <EditText
+        android:id="@+id/region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:hint="Please input your region"
+        android:layout_alignBottom="@+id/Region"
+        android:layout_alignLeft="@+id/picture"
+        android:layout_alignStart="@+id/picture"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:text="admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignBaseline="@+id/Name"
+        android:layout_alignBottom="@+id/Name"
+        android:layout_alignRight="@+id/picture"
+        android:layout_alignEnd="@+id/picture" />
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:contentDescription="gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/Gender"
-        android:layout_alignLeft="@+id/region"
-        android:layout_alignStart="@+id/region">
+        android:layout_alignLeft="@+id/username"
+        android:layout_alignStart="@+id/username">
 
     <RadioButton
         android:id="@+id/girl"
@@ -143,34 +161,7 @@
 
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/Region"
-        android:text="REGION"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:layout_marginTop="21dp"
-        android:layout_below="@+id/radioGroup"
-        android:layout_alignLeft="@+id/Gender"
-        android:layout_alignStart="@+id/Gender" />
 
-    <ImageButton
-        android:id="@+id/take_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_open"
-        android:layout_alignTop="@+id/picture"
-        android:layout_toLeftOf="@+id/save"
-        android:layout_toStartOf="@+id/save" />
-
-    <ImageButton
-        android:id="@+id/choose_from_album"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_new"
-        android:layout_below="@+id/take_photo"
-        android:layout_alignLeft="@+id/take_photo"
-        android:layout_alignStart="@+id/take_photo" />
 
 
 </RelativeLayout>

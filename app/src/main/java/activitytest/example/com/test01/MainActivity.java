@@ -27,11 +27,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity{
 
     private Image[] images = {new Image("pic1.jpg", R.drawable.pic1, "This is my first pic!"),
             new Image("pic2.jpg", R.drawable.pic2, "This is the second pic"),
-            new Image("pic3.jpg", R.drawable.pic3, "This is the third pic")};
+            new Image("pic3.jpg", R.drawable.pic3, "This is the third pic"),
+            new Image("pic4.jpg", R.drawable.pic4, "This is the forth pic"),
+            new Image("pic5.jpg", R.drawable.pic5, "This is the fifth pic")};
 
     private List<Image> imageList = new ArrayList<>();
     private ImageAdapter adapter;
@@ -54,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         adapter.setOnItemClickListener(new MyItemClickListener() {
             @Override
-            public void onItemClick(View view) {
-                Toast.makeText(MainActivity.this, "This is first picture", Toast.LENGTH_SHORT).show();
+            public void onItemClick(View view, int position) {
+                Toast.makeText(MainActivity.this, position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -65,14 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imageList.add(images[0]);
         imageList.add(images[1]);
         imageList.add(images[2]);
-
+        imageList.add(images[3]);
+        imageList.add(images[4]);
     }
 
-    public void onClick(View v) {
-        //if (v.getId() == R.id.cardView) {
-
-      //  }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -92,9 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent1.putExtra("username",username);
                 startActivity(intent1);
                 break;
-            case R.id.open:
-                Toast.makeText(this, "open an existing pic", Toast.LENGTH_SHORT).show();
-                break;
+
             case R.id.info:
                 Intent intent2 = new Intent(MainActivity.this, InfoActivity.class);
                 intent2.putExtra("username",username);

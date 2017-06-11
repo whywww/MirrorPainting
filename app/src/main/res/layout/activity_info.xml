@@ -20,25 +20,21 @@
         <ImageView
             android:id="@+id/orange"
             android:layout_width="match_parent"
-            android:layout_height="700dp"
+            android:layout_height="match_parent"
             app:srcCompat="@android:color/holo_orange_light"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="168dp" />
+            android:layout_below="@+id/head"
+            android:layout_marginTop="20dp" />
 
     <TextView
         android:id="@+id/welcome"
         android:text="Welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="30dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
         android:textSize="30sp"
-        android:layout_below="@+id/head"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/orange" />
 
     <TextView
         android:id="@+id/myinfo"
@@ -118,5 +114,25 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse" />
+
+    <ImageButton
+        android:id="@+id/choose_from_album"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/ic_open"
+        android:layout_alignBottom="@+id/head"
+        android:layout_toRightOf="@+id/head"
+        android:layout_toEndOf="@+id/head"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:id="@+id/take_photo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:srcCompat="@drawable/ic_photo"
+        android:layout_above="@+id/choose_from_album"
+        android:layout_toRightOf="@+id/head"
+        android:layout_toEndOf="@+id/head"
+        android:background="@android:color/transparent" />
 
 </RelativeLayout>

@@ -39,7 +39,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mListener.onItemClick(v);
+                    mListener.onItemClick(v, getAdapterPosition());
                 }
             });
         }
@@ -80,8 +80,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
     /**
      * 为Adapter暴露一个Item点击监听的公开方法
-     *
-     * @param listener
      */
     public void setOnItemClickListener(MyItemClickListener listener) {
         this.listener = listener;
@@ -92,5 +90,5 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
  * 回调接口
  */
 interface MyItemClickListener {
-    void onItemClick(View view);
+    void onItemClick(View view, int position);
 }

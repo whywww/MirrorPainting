@@ -173,7 +173,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     System.out.println(result);
 
                     if( result.equals("true")){
-                        System.out.println("1111111111111111");
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         intent.putExtra("username",UserName);
                         startActivity(intent);
